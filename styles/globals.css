@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #000;
+    color: white;
+    font-size: 16px;
+    -webkit-tap-highlight-color: rgba(66, 153, 255, 0.2);
+  }
+  
+  /*Projects*/
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0.9375rem;
+  }
+  .container .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+  
+  .card {
+    padding: 1em;
+    margin: 0.9375rem;
+    box-shadow: 0 0 0 1px #E2E8F0;
+    width: 100%;
+    border-radius: 0.5rem;
+    transition: 0.25s cubic-bezier(0.08, 0.52, 0.52, 1);
+  }
+  .card:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  .card:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 255, 0.6);
+  }
+  .card-img {
+    margin-bottom: 0.9375rem;
+  }
+  .card-img img {
+    max-width: 2rem;
+    border-radius: 100%;
+  }
+  .card-title {
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .card-description {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    color: #f9f9f9;
+    line-height: 1.41;
+  }
+  
+  @media (max-width: 700px) {
+    .container {
+      max-width: 500px;
+      padding: calc(.9375rem * 2);
+    }
+    .container .row {
+      flex-direction: column;
+      justify-content: normal;
+    }
+  
+    .card {
+      margin: 0.9375rem 0;
+    }
+  }
+
+  /*Navbar*/
+
+  .buttons-container {
+    margin: 16px;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .buttons-container .highlight {
+    left: 0;
+    position: absolute;
+    background: rgb(245, 244, 244);
+    z-index: -1;
+    border-radius: 0.6ch;
+    opacity: 0;
+  }
+  .buttons-container button {
+    color: #888;
+    background: none;
+    border: none;
+    padding: 1ch 1.5ch;
+    transition: color 0.2s ease;
+    border-bottom: 2px solid transparent;
+    font-size: inherit;
+    font-family: system-ui;
+  }
+  .buttons-container button:hover {
+    color: white;
+    cursor: pointer;
+  }
+  .buttons-container button:focus {
+    color: white;
+    border-bottom: 2px solid white;
+    outline: none;
+  }
+
+  /*Timeline*/
+
+  .timeline {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+    font-family: "Fira Sans", sans-serif;
+    color: #ffffff;
+  }
+  
+  .timeline__component {
+    margin: 0 20px 20px 20px;
+  }
+  
+  .timeline__component--bg {
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  /* LEAVE TILL LAST */
+  .timeline__component--bottom {
+    margin-bottom: 0;
+  }
+  
+  .timeline__middle {
+    position: relative;
+    background: #ffffff;
+  }
+  
+  .timeline__point {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+  }
+  
+  /* LEAVE TILL LAST */
+  .timeline__point--bottom {
+    top: initial;
+    bottom: 0;
+  }
+  
+  .timeline__date--right {
+    text-align: right;
+  }
+  
+  .timeline__title {
+    margin: 0;
+    font-size: 1.15em;
+    font-weight: bold;
+  }
+  
+  .timeline__paragraph {
+    line-height: 1.5;
+  }
+  
+  /*Text Transition*/
+
+h1::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+h1::before {
+  content: "";
+  text-decoration-color: #000;
+  display: block;
+  width: 480px;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200 100% 80%);
+  z-index: -1;
+  transition: transform .3s ease;
+}
+
+h1 {
+  position: relative;
+  font-size: 5rem;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui, sans-serif;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}
