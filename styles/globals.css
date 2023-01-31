@@ -184,17 +184,17 @@
   
   /*Text Transition*/
 
-h1::before {  
+h2::before {  
   transform: scaleX(0);
   transform-origin: bottom right;
 }
 
-h1:hover::before {
+h2:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-h1::before {
+h2::before {
   content: "";
   text-decoration-color: #000;
   display: block;
@@ -207,7 +207,7 @@ h1::before {
   transition: transform .3s ease;
 }
 
-h1 {
+h2 {
   position: relative;
   font-size: 5rem;
 }

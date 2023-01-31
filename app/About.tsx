@@ -2,9 +2,9 @@
 export default function About() {
   return (
     <div>
-        <h1>
+        <h2>
             Khan Akhtar
-        </h1>
+        </h2>
     </div>
   )
 }
